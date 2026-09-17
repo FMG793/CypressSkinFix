@@ -1,29 +1,26 @@
 {
 	"schemaVersion": 1,
-	"id": "example_mod",
+	"id": "cypressskinfix",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Cypress Skin Fix",
+	"description": "Get your skin back!",
 	"authors": [
-		"Me!"
+		"FMG793"
 	],
 	"contact": {
-		"homepage": "https://example.com/",
-		"sources": "https://github.com/OrnitheMC/ornithe-template-mod"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/example_mod/icon.png",
+	"license": "LGPL-3.0-or-later",
+	"icon": "assets/cypressskinfix/icon.png",
 	"environment": "client",
 	"entrypoints": {
 		"init": [
 		]
 	},
 	"mixins": [
-		"example_mod.mixins.json"
+		"cypressskinfix.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",
-		"minecraft": "1.0.0-alpha.1.0.16.5.20",
-		"cypress_lib_core": "*"
+		"minecraft": "1.0.0-alpha.1.0.16.5.20"
 	}
 }

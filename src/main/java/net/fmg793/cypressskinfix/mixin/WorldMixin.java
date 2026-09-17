@@ -22,14 +22,18 @@ public class WorldMixin {
 	private boolean hasSkin;
 
 	@Inject(method = "addEntityAlways(Lnet/minecraft/entity/Entity;)V", at = @At("TAIL"))
-	public void addEntityAlways(Entity entity, CallbackInfo ci) {
-		if (!this.entities.contains((PlayerEntity)entity)) {
-	        hasSkin = false;
-		}
-		
+	public void addEntityAlwaysMixin(Entity entity, CallbackInfo ci) {
 		if (this.entities.contains((PlayerEntity)entity) && hasSkin == false) {
-		    SkinManager.addSkin();
-		    hasSkin = true;
+			SkinManager.addSkin();
+			hasSkin = true;
+		}
+	}
+
+	@Inject(method = "addEntityAlways(Lnet/minecraft/entity/Entity;)V", at = @At("HEAD"))
+	public void addEntityAlways2Mixin(Entity entity, CallbackInfo ci) {
+		hasSkin = true;
+		if (!this.entities.contains((PlayerEntity)entity)) {
+			hasSkin = false;
 		}
 	}
 }
